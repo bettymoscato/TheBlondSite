@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Blond — Beauty. Influence. Belonging.</title>
+<meta name="description" content="The Blond, Sorocaba. Um universo de beleza, influência e conexões ao qual mulheres desejam pertencer. Especialistas em mechas, grandes transformações, correções e Hair Spa.">
+<meta property="og:title" content="The Blond — Beauty. Influence. Belonging.">
+<meta property="og:description" content="Alguns lugares acompanham tendências. Outros ajudam a criá-las.">
+<meta property="og:image" content="assets/img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#141210;
+  --ink-soft:#3a3530;
+  --paper:#f7f3ec;
+  --paper-2:#efe8dc;
+  --gold:#b8956a;
+  --gold-soft:#d9c3a0;
+  --line:rgba(20,18,16,.14);
+  --wa:#1fa855;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Inter",system-ui,-apple-system,sans-serif;
+  --gutter:clamp(16px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gutter)}
+.eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.2rem,5vw,4rem)}
+h3{font-size:1.7rem}
+em{font-style:italic}
+section{padding:clamp(80px,12vw,160px) 0}
+
+/* ---------- photo slots ---------- */
+.ph{position:relative;overflow:hidden;background:
+  radial-gradient(120% 90% at 30% 20%,#e7d6b8 0%,#c9a97d 40%,#7d6448 100%)}
+.ph::after{content:"TB";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:clamp(2rem,6vw,4rem);color:rgba(255,255,255,.35);z-index:0}
+.ph img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.ph:hover img{transform:scale(1.03)}
+.ph.missing img{display:none}
+
+/* ---------- nav ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+header.solid{background:rgba(247,243,236,.92);backdrop-filter:blur(10px);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{font-family:var(--serif);font-size:1.6rem;letter-spacing:.04em;font-weight:500}
+.logo span{font-style:italic;font-weight:400}
+header:not(.solid) .logo,header:not(.solid) .nav a{color:#fff}
+.nav ul{display:flex;gap:2.2rem;list-style:none;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:400}
+.nav ul a{opacity:.85;transition:opacity .2s}
+.nav ul a:hover{opacity:1}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:0 0 clamp(56px,9vw,110px)}
+.hero .ph{position:absolute;inset:0}
+.hero .ph::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(20,18,16,.35) 0%,rgba(20,18,16,.15) 40%,rgba(20,18,16,.75) 100%)}
+.hero .wrap{position:relative;z-index:3;width:100%}
+.hero h1{font-size:clamp(3rem,10vw,8.5rem);max-width:12ch}
+.hero h1 em{color:var(--gold-soft)}
+.hero p.lead{margin-top:1.6rem;max-width:34rem;font-size:clamp(1rem,1.6vw,1.15rem);opacity:.92}
+.hero .eyebrow{color:var(--gold-soft);margin-bottom:1.4rem;display:block}
+.hero .ctas{margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1rem}
+.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.7rem;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;border:1px solid currentColor;transition:background .3s,color .3s}
+.btn.solid{background:#fff;color:var(--ink);border-color:#fff}
+.btn.solid:hover{background:var(--gold-soft);border-color:var(--gold-soft)}
+.btn.ghost:hover{background:#fff;color:var(--ink)}
+.btn.dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.dark:hover{background:var(--gold);border-color:var(--gold)}
+.btn svg{width:18px;height:18px}
+
+/* ---------- manifesto ---------- */
+.manifesto{text-align:center}
+.manifesto .big{font-family:var(--serif);font-size:clamp(2rem,5.2vw,4.4rem);line-height:1.1;max-width:18ch;margin:1.6rem auto 0}
+.manifesto .big em{color:var(--gold)}
+.manifesto .lines{margin:3.4rem auto 0;max-width:36rem;font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.45rem);line-height:1.6;color:var(--ink-soft)}
+.manifesto .lines p+p{margin-top:1.4rem}
+
+/* ---------- belonging ---------- */
+.belong{background:var(--ink);color:var(--paper)}
+.belong .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
+.belong .ph{aspect-ratio:4/5}
+.belong h2 em{color:var(--gold-soft)}
+.belong .intro{margin-top:1.8rem;font-size:1.08rem;color:rgba(247,243,236,.8);max-width:32rem}
+.why{margin-top:3rem;display:grid;gap:1.8rem}
+.why div{border-top:1px solid rgba(247,243,236,.18);padding-top:1.2rem}
+.why h4{font-family:var(--serif);font-weight:400;font-size:1.45rem;margin-bottom:.35rem;color:#fff}
+.why p{font-size:.95rem;color:rgba(247,243,236,.72)}
+.quote{margin-top:3rem;font-family:var(--serif);font-style:italic;font-size:clamp(1.6rem,3vw,2.3rem);color:var(--gold-soft)}
+@media (max-width:860px){.belong .grid{grid-template-columns:1fr}}
+
+/* ---------- pillars ---------- */
+.pillars .head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,80px)}
+.pillars .head p{max-width:28rem;color:var(--ink-soft)}
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.p-grid article{padding:2.2rem 1.6rem 2.2rem 0;border-right:1px solid var(--line)}
+.p-grid article+article{padding-left:1.6rem}
+.p-grid article:last-child{border-right:0}
+.p-grid .n{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:1.1rem}
+.p-grid h3{margin:.8rem 0 .9rem}
+.p-grid p{font-size:.94rem;color:var(--ink-soft)}
+@media (max-width:960px){.p-grid{grid-template-columns:1fr 1fr}.p-grid article{border-right:0;border-bottom:1px solid var(--line);padding:2rem 0!important}.p-grid article:nth-child(odd){padding-right:1.4rem!important;border-right:1px solid var(--line)}.p-grid article:nth-child(even){padding-left:1.4rem!important}}
+@media (max-width:560px){.p-grid{grid-template-columns:1fr}.p-grid article:nth-child(n){border-right:0;padding:1.8rem 0!important}}
+
+/* ---------- expertise ---------- */
+.expertise{background:var(--paper-2)}
+.ex-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(14px,2vw,24px);margin-top:clamp(40px,6vw,72px)}
+.ex{position:relative;color:#fff}
+.ex .ph{height:100%;min-height:320px}
+.ex .cap{position:absolute;inset:auto 0 0 0;z-index:3;padding:1.6rem;background:linear-gradient(0deg,rgba(20,18,16,.78),transparent)}
+.ex .cap span{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft)}
+.ex .cap h3{margin:.3rem 0 .35rem}
+.ex .cap p{font-size:.9rem;opacity:.88;max-width:28rem}
+.ex.a{grid-column:span 7;grid-row:span 2}
+.ex.b,.ex.c{grid-column:span 5}
+.ex.d,.ex.e{grid-column:span 6}
+.ex.a .ph{min-height:660px}
+@media (max-width:860px){.ex.a,.ex.b,.ex.c,.ex.d,.ex.e{grid-column:span 12}.ex.a .ph{min-height:440px}}
+.note{margin-top:2.2rem;font-size:.92rem;color:var(--ink-soft);max-width:44rem}
+
+/* ---------- universe ---------- */
+.u-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);margin-top:clamp(40px,6vw,72px)}
+.u-grid .ph{aspect-ratio:3/4;margin-bottom:1.4rem}
+.u-grid h3{margin-bottom:.5rem}
+.u-grid p{color:var(--ink-soft);font-size:.95rem}
+@media (max-width:860px){.u-grid{grid-template-columns:1fr}}
+
+/* ---------- nath ---------- */
+.nath{background:var(--paper-2)}
+.nath .grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(40px,7vw,110px);align-items:center}
+.nath .ph{aspect-ratio:4/5}
+.nath p{color:var(--ink-soft);margin-top:1.3rem;max-width:32rem}
+.nath .sig{margin-top:2rem;font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--ink)}
+@media (max-width:860px){.nath .grid{grid-template-columns:1fr}}
+
+/* ---------- gallery ---------- */
+.gallery .g{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,14px);margin-top:clamp(36px,5vw,60px)}
+.gallery .ph{aspect-ratio:1/1}
+@media (max-width:760px){.gallery .g{grid-template-columns:repeat(2,1fr)}}
+.gallery .foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}
+
+/* ---------- visit ---------- */
+.visit{background:var(--ink);color:var(--paper);text-align:center}
+.visit h2 em{color:var(--gold-soft)}
+.visit .lead{margin:1.6rem auto 0;max-width:36rem;color:rgba(247,243,236,.78)}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:4rem auto 3.4rem;max-width:960px;text-align:center}
+.info div{border-top:1px solid rgba(247,243,236,.2);padding-top:1.3rem}
+.info .eyebrow{color:var(--gold-soft)}
+.info p{margin-top:.7rem;font-family:var(--serif);font-size:1.3rem;line-height:1.4}
+.info a{border-bottom:1px solid rgba(217,195,160,.5)}
+@media (max-width:760px){.info{grid-template-columns:1fr}}
+.visit .btn.solid{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+footer{background:var(--ink);color:rgba(247,243,236,.55);border-top:1px solid rgba(247,243,236,.12);padding:2.2rem 0;font-size:.8rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer .tag{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gold-soft)}
+
+/* ---------- floating whatsapp ---------- */
+.wa{position:fixed;right:clamp(16px,3vw,32px);bottom:clamp(16px,3vw,32px);z-index:60;display:flex;align-items:center;gap:.7rem;background:var(--ink);color:#fff;border-radius:999px;padding:.55rem 1.2rem .55rem .55rem;box-shadow:0 12px 32px rgba(0,0,0,.25);transition:transform .3s}
+.wa:hover{transform:translateY(-3px)}
+.wa i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--wa)}
+.wa svg{width:24px;height:24px;fill:#fff}
+.wa span{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+@media (max-width:520px){.wa{padding:.55rem}.wa span{display:none}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#" class="logo">The <span>Blond</span></a>
+    <nav>
+      <ul>
+        <li><a href="#manifesto">Manifesto</a></li>
+        <li><a href="#the-blonder">The Blonder</a></li>
+        <li><a href="#beauty-hair">Beauty &amp; Hair</a></li>
+        <li><a href="#universe">Universe</a></li>
+        <li><a href="#visit">Visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="The Blond">
+  <figure class="ph"><img src="assets/img/hero.jpg" alt="Interior do salão The Blond em Sorocaba"></figure>
+  <div class="wrap">
+    <span class="eyebrow">Sorocaba · Since the beginning, a reference</span>
+    <h1>Beauty. Influence. <em>Belonging.</em></h1>
+    <p class="lead">Alguns lugares acompanham tendências. Outros ajudam a criá-las. O The Blond nasceu da beleza — e construiu, a partir dela, um universo.</p>
+    <div class="ctas">
+      <a class="btn solid js-wa" href="#" data-msg="Olá, The Blond! Gostaria de conversar sobre um atendimento.">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.2c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.3 1.3-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.4 9.8 10.1 5.2 16 5.2s10.6 4.7 10.6 10.5S21.8 26.2 16 26.2zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+        Fale com o The Blond
+      </a>
+      <a class="btn ghost" href="#the-blonder">Seja uma The Blonder</a>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section id="manifesto" class="manifesto">
+  <div class="wrap">
+    <span class="eyebrow rv">The Blond Manifesto</span>
+    <p class="big rv">Um lugar onde técnica encontra <em>repertório</em>. Onde imagem encontra <em>identidade</em>.</p>
+    <div class="lines rv">
+      <p>Acreditamos em beleza com intenção. Em escolhas feitas com conhecimento. Em profissionais que dominam o que fazem. Em novidade com curadoria. Em excelência percebida nos detalhes.</p>
+      <p>Acreditamos também que os lugares que escolhemos dizem algo sobre nós.</p>
+      <p>Por isso, o The Blond é feito para mulheres que querem estar onde as coisas acontecem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BELONGING -->
+<section id="the-blonder" class="belong">
+  <div class="wrap grid">
+    <figure class="ph rv"><img src="assets/img/the-blonder.jpg" alt="Cliente The Blonder no salão"></figure>
+    <div class="rv">
+      <span class="eyebrow">Belonging</span>
+      <h2 style="margin-top:1.2rem">Ser uma <em>The Blonder</em>.</h2>
+      <p class="intro">Não é um cartão de fidelidade. É um perfil de escolhas. A The Blonder valoriza qualidade, imagem, informação e boas experiências — e escolhe com atenção os lugares aos quais deseja pertencer.</p>
+
+      <div class="why">
+        <div>
+          <h4>Porque os lugares que você escolhe falam por você.</h4>
+          <p>Frequentar o The Blond carrega significado. Há anos o salão antecipa tendências e forma referências em Sorocaba — sua estética e sua comunicação viraram padrão para o mercado. Estar aqui é estar onde a beleza da cidade é definida, não copiada.</p>
+        </div>
+        <div>
+          <h4>Porque você é conhecida — não atendida.</h4>
+          <p>Aqui, a técnica começa pela compreensão. Seu histórico, suas preferências e o momento que você vive são considerados em cada visita. O pertencimento nasce dessa recorrência: um lugar que combina com suas escolhas e onde você é lembrada.</p>
+        </div>
+        <div>
+          <h4>Porque você não precisa descobrir tudo sozinha.</h4>
+          <p>Curadoria é privilégio. O The Blond filtra novidades, técnicas, marcas e experiências e apresenta o que faz sentido para você — antes que se torne comum.</p>
+        </div>
+        <div>
+          <h4>Porque o universo vai além da cadeira.</h4>
+          <p>Comunidade The Blonder, The Blond Hub, encontros e experiences: pessoas, marcas e conexões que compartilham os mesmos códigos. O salão é o centro; a relação alcança outros momentos da sua vida.</p>
+        </div>
+      </div>
+      <p class="quote">Desejada, sem ser excludente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="wrap">
+    <div class="head rv">
+      <div>
+        <span class="eyebrow">Our territory</span>
+        <h2 style="margin-top:1rem">Quatro códigos.<br><em>Um universo.</em></h2>
+      </div>
+      <p>O território do The Blond nasceu na beleza e há muito tempo ultrapassou os limites de um salão.</p>
+    </div>
+    <div class="p-grid rv">
+      <article><span class="n">01</span><h3>Identidade</h3><p>Cada mulher tem uma relação particular com sua imagem. Traduzimos essa individualidade em escolhas estéticas coerentes com quem você é e o momento que vive.</p></article>
+      <article><span class="n">02</span><h3>Transformação</h3><p>Transformar não é necessariamente mudar radicalmente. Pode ser atualizar, corrigir, recuperar, preservar — ou descobrir uma nova possibilidade. Sempre com intenção.</p></article>
+      <article><span class="n">03</span><h3>Pertencimento</h3><p>Um lugar onde você se sente conhecida, valorizada e bem cuidada — e que se amplia através da comunidade, dos conteúdos e dos encontros.</p></article>
+      <article><span class="n">04</span><h3>Presença</h3><p>Imagem comunica. O cabelo não define quem você é — permite que sua imagem esteja em sintonia com o que deseja expressar.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="beauty-hair" class="expertise">
+  <div class="wrap">
+    <span class="eyebrow rv">Beauty &amp; Hair</span>
+    <h2 class="rv" style="margin-top:1rem;max-width:16ch">Especialista, <em>sem complicar.</em></h2>
+    <div class="ex-grid">
+      <article class="ex a rv">
+        <figure class="ph"><img src="assets/img/blond-01.jpg" alt="Mechas loiras assinadas pelo The Blond"></figure>
+        <div class="cap"><span>Signature</span><h3>Mechas &amp; Blond</h3><p>O loiro que deu nome à casa. Luz, tom e manutenção pensados para a sua rotina.</p></div>
+      </article>
+      <article class="ex b rv">
+        <figure class="ph"><img src="assets/img/transformacao.jpg" alt="Grande transformação de cabelo"></figure>
+        <div class="cap"><span>Transformation</span><h3>Grandes transformações</h3><p>Mudanças de imagem com segurança, conhecimento e experiência.</p></div>
+      </article>
+      <article class="ex c rv">
+        <figure class="ph"><img src="assets/img/correcao.jpg" alt="Correção de cor"></figure>
+        <div class="cap"><span>Correction</span><h3>Correções técnicas</h3><p>Para quando o resultado anterior não está à altura de você.</p></div>
+      </article>
+      <article class="ex d rv">
+        <figure class="ph"><img src="assets/img/hair-spa.jpg" alt="Hair Spa The Blond"></figure>
+        <div class="cap"><span>Hair Spa &amp; Care</span><h3>Hair Spa</h3><p>Tratamento, cuidado e recorrência. A saúde do fio como parte da experiência.</p></div>
+      </article>
+      <article class="ex e rv">
+        <figure class="ph"><img src="assets/img/extensao.jpg" alt="Extensão de cabelo"></figure>
+        <div class="cap"><span>Beauty</span><h3>Extensões, unhas &amp; make</h3><p>O cuidado completo, no mesmo padrão de entrega.</p></div>
+      </article>
+    </div>
+    <p class="note rv">Alguns procedimentos dependem de avaliação. Antes de começar, você sabe como funciona, quanto tempo leva e qual investimento esperar.</p>
+  </div>
+</section>
+
+<!-- UNIVERSE -->
+<section id="universe">
+  <div class="wrap">
+    <span class="eyebrow rv">The Blond Universe</span>
+    <h2 class="rv" style="margin-top:1rem;max-width:18ch">O salão é o centro. <em>O universo é seu.</em></h2>
+    <div class="u-grid">
+      <div class="rv">
+        <figure class="ph"><img src="assets/img/community.jpg" alt="Comunidade The Blonder"></figure>
+        <span class="eyebrow">Community</span>
+        <h3 style="margin-top:.5rem">Comunidade The Blonder</h3>
+        <p>Mulheres que compartilham os mesmos códigos: imagem, informação, qualidade e boas conexões.</p>
+      </div>
+      <div class="rv">
+        <figure class="ph"><img src="assets/img/hub.jpg" alt="The Blond Hub"></figure>
+        <span class="eyebrow">The Blond Hub</span>
+        <h3 style="margin-top:.5rem">Marcas, negócios &amp; pessoas</h3>
+        <p>Conexões com marcas e experiências que fazem sentido para o universo da The Blonder.</p>
+      </div>
+      <div class="rv">
+        <figure class="ph"><img src="assets/img/experiences.jpg" alt="Eventos e experiências The Blond"></figure>
+        <span class="eyebrow">Experiences</span>
+        <h3 style="margin-top:.5rem">Encontros &amp; eventos</h3>
+        <p>Movimentos, bastidores e acontecimentos que fazem valer estar ali.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NATH -->
+<section class="nath">
+  <div class="wrap grid">
+    <figure class="ph rv"><img src="assets/img/nath.jpg" alt="Nath, fundadora do The Blond"></figure>
+    <div class="rv">
+      <span class="eyebrow">The Blond People</span>
+      <h2 style="margin-top:1rem">Nath.</h2>
+      <p>Fundadora, liderança e uma das principais expressões do The Blond. Sua forma de enxergar beleza, comportamento e tendências ajudou a construir o lugar que a marca ocupa hoje.</p>
+      <p>Anfitriã natural deste universo, aproxima clientes, profissionais, parceiros e marcas. Ao seu lado, uma equipe de profissionais que se tornaram referência no mercado.</p>
+      <p class="sig">Nath lidera o The Blond. O The Blond transforma essa visão em uma cultura que pode ser vivida por todas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="wrap">
+    <span class="eyebrow rv">The Blond Culture</span>
+    <h2 class="rv" style="margin-top:1rem">Eu quero <em>estar ali.</em></h2>
+    <div class="g rv">
+      <figure class="ph"><img src="assets/img/g-01.jpg" alt="The Blond"></figure>
+      <figure class="ph"><img src="assets/img/g-02.jpg" alt="The Blond"></figure>
+      <figure class="ph"><img src="assets/img/g-03.jpg" alt="The Blond"></figure>
+      <figure class="ph"><img src="assets/img/g-04.jpg" alt="The Blond"></figure>
+      <figure class="ph"><img src="assets/img/g-05.jpg" alt="The Blond"></figure>
+      <figure class="ph"><img src="assets/img/g-06.jpg" alt="The Blond"></figure>
+      <figure class="ph"><img src="assets/img/g-07.jpg" alt="The Blond"></figure>
+      <figure class="ph"><img src="assets/img/g-08.jpg" alt="The Blond"></figure>
+    </div>
+    <div class="foot rv">
+      <p style="color:var(--ink-soft)">Beleza, moda, comportamento e pessoas. Acompanhe o universo.</p>
+      <a class="btn dark" href="https://www.instagram.com/theblondsorocaba/" target="_blank" rel="noopener">@theblondsorocaba</a>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="wrap">
+    <span class="eyebrow rv" style="color:var(--gold-soft)">Visit</span>
+    <h2 class="rv" style="margin-top:1rem">Seu lugar <em>já existe.</em></h2>
+    <p class="lead rv">Conte o que você deseja e o momento que está vivendo. A gente indica o profissional e o caminho certo para você.</p>
+    <div class="info rv">
+      <div><span class="eyebrow">Endereço</span><p><a href="https://www.google.com/maps/search/?api=1&query=The+Blond+Rua+Luis+Pessuti+183+Sorocaba" target="_blank" rel="noopener">Rua Luis Pessuti, 183<br>Jd. Portal da Colina · Sorocaba</a></p></div>
+      <div><span class="eyebrow">Horário</span><p>Terça a sábado<br>8h às 18h</p></div>
+      <div><span class="eyebrow">Contato</span><p><a href="#" class="js-wa" data-msg="Olá, The Blond! Gostaria de conversar sobre um atendimento.">(15) 99113-8333</a><br><a href="https://www.instagram.com/theblondsorocaba/" target="_blank" rel="noopener">@theblondsorocaba</a></p></div>
+    </div>
+    <a class="btn solid js-wa rv" href="#" data-msg="Olá, The Blond! Quero ser uma The Blonder. Podem me ajudar?">Quero ser uma The Blonder</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> The Blond · Sorocaba</span>
+    <span class="tag">Beauty. Influence. Belonging.</span>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="wa js-wa" href="#" data-msg="Olá, The Blond! Gostaria de conversar sobre um atendimento." aria-label="Conversar com o The Blond no WhatsApp">
+  <i><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.2c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.3 1.3-4-.3-.4c-1.1-1.7-1.7-3.7-1.7-5.7C5.4 9.8 10.1 5.2 16 5.2s10.6 4.7 10.6 10.5S21.8 26.2 16 26.2zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></i>
+  <span>WhatsApp</span>
+</a>
+
+<script>
+// Número do WhatsApp do salão (DDI + DDD + número, só dígitos)
+const WHATSAPP = "5515991138333";
+
+document.querySelectorAll(".js-wa").forEach(a => {
+  const msg = a.dataset.msg || "Olá, The Blond!";
+  a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+  a.target = "_blank";
+  a.rel = "noopener";
+});
+
+// Fotos ausentes mostram o fundo da marca
+document.querySelectorAll(".ph img").forEach(img => {
+  const miss = () => img.closest(".ph").classList.add("missing");
+  if (img.complete && img.naturalWidth === 0) miss();
+  img.addEventListener("error", miss);
+});
+
+// Header sólido ao rolar
+const header = document.querySelector("header");
+const onScroll = () => header.classList.toggle("solid", scrollY > 60);
+addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+// Reveal
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), { threshold: .12 });
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
